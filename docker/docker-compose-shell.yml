@@ -1,0 +1,6 @@
+services:
+
+  ros2-node-example:
+    entrypoint: bash
+    tty: true
+    stdin_open: true

@@ -1,0 +1,23 @@
+networks:
+  ros2-net:
+    name: ros2-net
+    external: true
+
+services:
+  ros2-node-example:
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile
+    image: ros2-node-example:${VERSION}
+    container_name: ros2-node-example
+    user: ${USER_ID}:${GROUP_ID}
+    tty: true
+    entrypoint: /ros2/ws/build_and_run.sh
+    volumes:
+      - ../src:/ros2/ws
+      - ../.data/group:/etc/group
+      - ../.data/passwd:/etc/passwd
+      - ../.data/.vscode-server:/tmp/.vscode-server
+    restart: "no"
+    networks:
+      - ros2-net

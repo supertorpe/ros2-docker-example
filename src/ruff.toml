@@ -1,0 +1,6 @@
+line-length = 120
+
+[lint.per-file-ignores]
+"**/tests/**/*.py" = [
+    "S101", # asserts allowed in tests...
+]

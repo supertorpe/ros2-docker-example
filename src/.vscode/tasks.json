@@ -1,0 +1,65 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "detail": "Build workspace (default)",
+            "type": "shell",
+            "command": "./build.sh",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "ruff format",
+            "detail": "ruff format",
+            "type": "shell",
+            "command": "/ros2/venv/bin/ruff format /ros2/ws/src/pkg_foo",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "ruff fast check",
+            "detail": "ruff fast check",
+            "type": "shell",
+            "command": "/ros2/venv/bin/ruff check --ignore=D203,D213 --fix /ros2/ws/src/pkg_foo",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "ruff full check",
+            "detail": "ruff full check",
+            "type": "shell",
+            "command": "/ros2/venv/bin/ruff check --select=ALL --ignore=D203,D213 --fix /ros2/ws/src/pkg_foo",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "mypy",
+            "detail": "mypy",
+            "type": "shell",
+            "command": "/ros2/venv/bin/mypy /ros2/ws/src/pkg_foo",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+    ],
+    "inputs": [
+        {
+            "id": "package",
+            "type": "promptString",
+            "description": "Package name"
+        }
+    ]
+}

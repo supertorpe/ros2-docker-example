@@ -1,0 +1,16 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ROS2 Node",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "/ros2/ws/src/pkg_foo/pkg_foo/node_bar.py",
+      "console": "integratedTerminal",
+      "preLaunchTask": "build"
+    },
+  ],
+}
