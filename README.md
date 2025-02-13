@@ -19,7 +19,7 @@ Run the node:
 ./scripts/exec.sh -c start
 ```
 
-Run the container:
+Stop the container:
 ```
 ./scripts/exec.sh -c stop
 ```
